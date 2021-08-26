@@ -1,1 +1,253 @@
+-------------------------HTML-------------------------
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="main_v2.js"></script>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>~ ~ ~ ABC BLOG ~ ~ ~</h1>
+  <p>Feel free to share anything you like with others here</p>
+  <p>Connect and share with the people in your life</p>
+</div>
+
+<div class="topnav">
+  <a href="index.html">Home Page</a>
+  <a href="log_in_page.html">Log in / Sign up</a>
+  <a href="new_post_page.html">Create a new blog</a>
+  <a href="search_page.html">Search for a blog</a>
+  <a href="random_page.html">Any random blog</a>
+  <a href="account_page.html">My account</a>
+  <a href="about_us_page.html">About us</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Subject 01</h2>
+    <p>Shape function testing here.</p>
+    <canvas id="canvas01" width="120" height="120" style="border:1px solid #d3d3d3;">
+    </canvas>
+<script>
+var c = document.getElementById("canvas01");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(60,60,40,0,2*Math.PI);
+ctx.stroke();
+</script> 
+  </div>
+ 
+  <input v-model.lazy="msg" >
+
+  <div class="column">
+    <h2>Subject 02</h2>
+    <p>Image function testing here.</p>
+    <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="32" height="32">
+  </div>
+  
+  <div class="column">
+    <h2>Subject 03</h2>
+    <p>Audio function testing here.</p>
+    <audio controls>
+      <source src="popmusic01.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+  <div class="column">
+    <h2>Subject 04</h2>
+    <p>Content function of subject 04 here.</p>
+    <p>It appear that it is just text in this subject.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Subject 05</h2>
+    <p>Button function testing here.</p>
+    <button onclick="getLocation()">Show my coordinates</button>
+    <p id="demo"></p>
+  </div>
+  
+  <div class="column">
+    <h2>Subject 06</h2>
+    <p>Video function testing here.</p>
+    <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4">
+    </video>  
+  </div>
+  
+  <div class="column">
+    <h2>Subject 07</h2>
+    <p>Vue function 01 testing here.</p>
+    <div id="user_name_testing">{{ fullName }}</div> 
+  </div>
+  
+  <div class="column">
+    <h2>Subject 08</h2>
+    <p>Vue function 02 testing here.</p>
+      <ul id="content_publish_information" class="demo">
+        <li v-for="value in object">
+          {{ value }}
+        </li>
+      </ul>
+  </div>
+
+  <div class="column">
+    <h2>Subject 09</h2>
+    <p>Task 2: Checkbox  in your project.</p>
+
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br>
+    <span>Checked names: {{ checkedNames }}</span>
+
+    </div>
+
+  </div>
+
+  <div class="column">
+    <h2>Subject 10</h2>
+    <p>Task 3: Dynamic options rendering v-for</p>
+
+    <select v-model="selected">
+      <option disabled value="">Please select one</option>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
+-------------------------HTML-------------------------
+
+
+
+
+-------------------------CSS-------------------------
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  body {
+    background-color: lightblue;
+    opacity: 0.9;
+  }
+-------------------------CSS-------------------------
+
+
+
+
+-------------------------Javascript-------------------------
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+var vm = new Vue({
+  el: '#user_name_testing',
+  data: {
+    firstName: 'Tony',
+    lastName: 'Chan'
+  },
+  computed: {
+    fullName: function () {
+      return this.firstName + ' ' + this.lastName
+    }
+  }
+})
+
+new Vue({
+  el: '#content_publish_information',
+  data: {
+    object: {
+      title: 'Tips on how to manage your time',
+      author: 'Tom Banner',
+      published_date: '2021-08-13',
+    }
+  }
+})
+
+new Vue({
+  el: '...',
+  data: {
+    checkedNames: []
+  }
+})
+
+new Vue({
+  el: '...',
+  data: {
+    selected: ''
+  }
+})
+-------------------------Javascript-------------------------
