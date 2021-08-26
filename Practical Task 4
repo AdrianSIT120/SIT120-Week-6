@@ -45,104 +45,15 @@ body {
 
 <div class="row">
   <div class="column">
-    <h2>Subject 01</h2>
-    <p>Shape function testing here.</p>
-    <canvas id="canvas01" width="120" height="120" style="border:1px solid #d3d3d3;">
-    </canvas>
-<script>
-var c = document.getElementById("canvas01");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(60,60,40,0,2*Math.PI);
-ctx.stroke();
-</script> 
-  </div>
- 
-  <input v-model.lazy="msg" >
+    <h2>Account page</h2>
+    <p>Account information will be display here.</p>
+    <p2>Your age is: </p2>
+    <input v-model.number="age" type="number">
 
-  <div class="column">
-    <h2>Subject 02</h2>
-    <p>Image function testing here.</p>
-    <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="32" height="32">
-  </div>
-  
-  <div class="column">
-    <h2>Subject 03</h2>
-    <p>Audio function testing here.</p>
-    <audio controls>
-      <source src="popmusic01.mp3" type="audio/mpeg">
-    </audio>
+    </form>
+
 </div>
 
-  <div class="column">
-    <h2>Subject 04</h2>
-    <p>Content function of subject 04 here.</p>
-    <p>It appear that it is just text in this subject.</p>
-  </div>
-  
-  <div class="column">
-    <h2>Subject 05</h2>
-    <p>Button function testing here.</p>
-    <button onclick="getLocation()">Show my coordinates</button>
-    <p id="demo"></p>
-  </div>
-  
-  <div class="column">
-    <h2>Subject 06</h2>
-    <p>Video function testing here.</p>
-    <video width="320" height="240" controls>
-      <source src="movie.mp4" type="video/mp4">
-    </video>  
-  </div>
-  
-  <div class="column">
-    <h2>Subject 07</h2>
-    <p>Vue function 01 testing here.</p>
-    <div id="user_name_testing">{{ fullName }}</div> 
-  </div>
-  
-  <div class="column">
-    <h2>Subject 08</h2>
-    <p>Vue function 02 testing here.</p>
-      <ul id="content_publish_information" class="demo">
-        <li v-for="value in object">
-          {{ value }}
-        </li>
-      </ul>
-  </div>
-
-  <div class="column">
-    <h2>Subject 09</h2>
-    <p>Task 2: Checkbox  in your project.</p>
-
-    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-    <label for="jack">Jack</label>
-    <input type="checkbox" id="john" value="John" v-model="checkedNames">
-    <label for="john">John</label>
-    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-    <label for="mike">Mike</label>
-    <br>
-    <span>Checked names: {{ checkedNames }}</span>
-
-    </div>
-
-  </div>
-
-  <div class="column">
-    <h2>Subject 10</h2>
-    <p>Task 3: Dynamic options rendering v-for</p>
-
-    <select v-model="selected">
-      <option disabled value="">Please select one</option>
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
-    <span>Selected: {{ selected }}</span>
-
-    </div>
-
-  </div>
 
 </div>
 </body>
