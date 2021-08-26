@@ -1,1 +1,57 @@
+-------------------------HTML-------------------------
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
+<h1>
+From user
+</h1>
+
+<form id="demo">
+
+  <p>
+    <p2>Name: </p2>  
+    <input type="text" v-model="msg">
+    {{msg}}
+  </p>
+  
+  <p>
+    <p2>Pasword: </p2>  
+    <input type="text" v-model="msg2">
+    {{msg2}}
+  </p>
+  
+  <p>
+    <p2>Email: </p2>  
+    <input type="text" v-model="msg3">
+    {{msg3}}
+  </p>
+
+</form>
+-------------------------HTML-------------------------
+
+
+
+
+-------------------------CSS-------------------------
+
+-------------------------CSS-------------------------
+
+
+
+
+-------------------------Javascript-------------------------
+new Vue({
+  el: '#demo',
+  data: {
+    msg      : 'enter your name here',
+    msg2      : 'enter your password here',
+    msg3      : 'enter your email here',
+    checked  : true,
+    picked   : 'one',
+    selected : 'two',
+    multiSelect: ['one', 'three']
+  }
+})
+-------------------------Javascript-------------------------
+
+https://jsfiddle.net/rbz54jeh/
